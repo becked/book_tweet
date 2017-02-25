@@ -1,6 +1,6 @@
 # Gutenberg
 title = "MY_BOOK_TITLE"
-book_url = 'http://www.gutenberg.org/cache/epub/XXXX/pgXXXXX.txt'
+book_file = 'data/pgXXXXX.txt'
 
 # Twitter
 screen_name = 'MY_TWITTER_ACCOUNT'
