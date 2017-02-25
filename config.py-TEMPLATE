@@ -1,0 +1,11 @@
+# Gutenberg
+title = "MY_BOOK_TITLE"
+book_url = 'http://www.gutenberg.org/cache/epub/XXXX/pgXXXXX.txt'
+
+# Twitter
+screen_name = 'MY_TWITTER_ACCOUNT'
+consumer_key = 'MY_TWITTER_KEY'
+consumer_secret = 'MY_TWITTER_SECRET'
+access_token_key = 'MY_TWITTER_TOKEN_KEY'
+access_token_secret = 'MY_TWITTER_TOKEN_SECRET'
+

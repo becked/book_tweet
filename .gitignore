@@ -1,0 +1,11 @@
+# Python
+*.pyc
+venv
+
+# Config
+config.py
+serverless.yml
+.serverless/*
+
+# Data
+data/*
