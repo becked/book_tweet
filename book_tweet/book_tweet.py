@@ -41,7 +41,6 @@ def main():
     position = int(result.group(1))
 
     # Get the book and break into sentences
-    #book = get_book(config.book_url)
     book = read_book(config.book_file)
     sentences = parse_sentences(config.title, book)
 
