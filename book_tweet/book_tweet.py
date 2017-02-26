@@ -11,15 +11,17 @@ def sentence_to_tweets(sentence):
         tweets.append(sentence)
     else:
         words = sentence.split()
+        tweet_word_count = 0
         i = 0
-        while i <= len(words):
+        j = 0
+        while j <= len(words):
             tweet = ''
-            j = 0
+            j = i
             while len(tweet) < 120 and j <= len(words):
                 tweet = ' '.join(words[i:j])
                 j += 1
             tweets.append(tweet)
-            i += j
+            i += (len(words[i:j])-1)
     return tweets      
 
 def tweet(api, tweets):
@@ -35,10 +37,13 @@ def main():
                       access_token_key    = config.access_token_key,
                       access_token_secret = config.access_token_secret)
 
-    # Get last status so we can determine our position in the book
-    statuses = api.GetUserTimeline(screen_name=config.screen_name, count=1)
-    result = re.search('\[([0-9]+)\]$', statuses[0].text)
-    position = int(result.group(1))
+    # Get last status with a sentence ending so we can determine our position in the book
+    for i in range(1,100):
+        statuses = api.GetUserTimeline(screen_name=config.screen_name, count=i)
+        result = re.search('\[([0-9]+)\]$', statuses[i-1].text)
+        if result:
+            position = int(result.group(1))
+            break
 
     # Get the book and break into sentences
     book = read_book(config.book_file)
